@@ -8,19 +8,19 @@
 ## setinv,getinv - set and get the inverse matrix object
 
 makeCacheMatrix <- function(x = matrix()) {	
-    m <- NULL
-    set <- function(y) {
-      x <<- y
-      inv <<- NULL
-    }
-    get <- function() x
-    setmean <- function(inv) inv <<- solve
-    getmean <- function() inv
-    list(set = set, get = get,
-         setinv = setinv,
-         getinv = getinv)
+  m <- NULL
+  set <- function(y) {
+    x <<- y
+    inv <<- NULL
   }
-	
+  get <- function() x
+  setmean <- function(inv) inv <<- solve
+  getmean <- function() inv
+  list(set = set, get = get,
+       setinv = setinv,
+       getinv = getinv)
+}
+
 
 ## his function computes the inverse of the special "matrix" object returned by makeCacheMatrix above.
 ## If the inverse has already been calculated (and the matrix has not changed),
